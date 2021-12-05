@@ -1,5 +1,4 @@
 set expandtab
-colorscheme material
 set shiftwidth=2
 set tabstop=2
 set hidden
@@ -119,7 +118,11 @@ Plug 'marko-cerovac/material.nvim'
 call plug#end()
 doautocmd User PlugLoaded
 
-let g:material_style = "oceanic"
+
+" Material Theme
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'ocean'
+colorscheme material
 
 lua << EOF
 require'lspconfig'.pyright.setup{}
