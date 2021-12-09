@@ -40,6 +40,12 @@ nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 nmap <leader>k :nohlsearch<CR>
 nmap <leader>Q :bufdo bdelete<cr>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
 
@@ -93,29 +99,15 @@ endif
 
 call plug#begin(data_dir . '/plugins')
 
-" main one
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" 9000+ Snippets
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
-" lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
-" Need to **configure separately**
-
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-" - shell repl
-" - nvim lua api
-" - scientific calculator
-" - comment banner
-" - etc
-
 Plug 'neovim/nvim-lspconfig'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'preservim/nerdtree'
-Plug 'shaunsingh/nord.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 doautocmd User PlugLoaded
