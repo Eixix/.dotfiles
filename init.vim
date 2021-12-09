@@ -67,6 +67,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
+
 " Open the current file in the default program
 nmap <leader>x :!xdg-open %<cr><cr>
 
@@ -114,14 +115,14 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'preservim/nerdtree'
 Plug 'shaunsingh/nord.nvim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 call plug#end()
 doautocmd User PlugLoaded
 
 
 " Material Theme
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean'
+:lua require('material.functions').change_style("deep ocean")
 colorscheme material
 
 lua << EOF
