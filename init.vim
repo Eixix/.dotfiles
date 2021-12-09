@@ -108,6 +108,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'ggandor/lightspeed.nvim'
 
 call plug#end()
 doautocmd User PlugLoaded
