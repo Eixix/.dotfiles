@@ -101,7 +101,6 @@ call plug#begin(data_dir . '/plugins')
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'marko-cerovac/material.nvim'
@@ -133,16 +132,16 @@ local lsp_installer = require("nvim-lsp-installer")
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+local opts = {}
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+-- (optional) Customize the options passed to the server
+-- if server.name == "tsserver" then
+--     opts.root_dir = function() ... end
+-- end
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+-- This setup() function is exactly the same as lspconfig's setup function.
+-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+server:setup(opts)
 end)
 EOF
 
@@ -152,8 +151,8 @@ EOF
 "--------------------------------------------------------------------------
 
 augroup FileTypeOverrides
-    autocmd!
-    " Use '//' instead of '/* */' comments
-    autocmd FileType php setlocal commentstring=//%s
-    autocmd TermOpen * setlocal nospell
+  autocmd!
+  " Use '//' instead of '/* */' comments
+  autocmd FileType php setlocal commentstring=//%s
+  autocmd TermOpen * setlocal nospell
 augroup END
