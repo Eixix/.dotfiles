@@ -108,6 +108,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ggandor/lightspeed.nvim'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 doautocmd User PlugLoaded
