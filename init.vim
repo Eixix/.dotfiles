@@ -115,7 +115,7 @@ doautocmd User PlugLoaded
 
 
 " Material Theme
-:lua require('material.functions').change_style("deep ocean")
+let g:material_style = "deep ocean"
 colorscheme material
 
 lua << EOF
