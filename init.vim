@@ -7,7 +7,6 @@ set relativenumber
 set number
 set termguicolors
 set undofile
-set spell
 set title
 set ignorecase
 set smartcase
