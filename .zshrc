@@ -1,31 +1,6 @@
 # Use powerline
 USE_POWERLINE="true"
 
-source ~/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle jessarcher/zsh-artisan
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-plugins=(
-    artisan
-    composer
-    git
-)
-
-# Tell Antigen that you're done.
-antigen apply
-
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -46,5 +21,4 @@ alias vim="nvim"
 alias r="ranger"
 alias zshrc="vim ~/.dotfiles/.zshrc"
 alias viminit="vim ~/.dotfiles/init.vim"
-
-[ -f "/home/tobias/.ghcup/env" ] && source "/home/tobias/.ghcup/env" # ghcup-env
+alias i3config="vim ~/.dotfiles/manjaro/config"
