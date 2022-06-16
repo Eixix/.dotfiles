@@ -1,5 +1,6 @@
 # Use powerline
 USE_POWERLINE="true"
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -20,6 +21,7 @@ alias vim="nvim"
 alias r="ranger"
 alias zshrc="vim ~/.dotfiles/.zshrc"
 alias viminit="vim ~/.dotfiles/init.vim"
+alias i3config="vim ~/.dotfiles/manjaro/config"
 
 [ -f "/home/tobias/.ghcup/env" ] && source "/home/tobias/.ghcup/env" # ghcup-env
 
