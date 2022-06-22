@@ -1,0 +1,74 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "none",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2075,
+       "width": 1261,
+       "x": 3852,
+       "y": 12
+    },
+    "marks": [],
+    "name": "Telegram (2)",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+        "class": "^TelegramDesktop$",
+       // "instance": "^telegram\\-desktop$",
+       // "machine": "^Phobos\\-Tobias$",
+       // "title": "^Telegram\\ \\(2\\)$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2073,
+       "width": 1259,
+       "x": 6408,
+       "y": 13
+    },
+    "marks": [],
+    "name": "Signal",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+        "class": "^Signal$",
+       // "instance": "^signal$",
+       // "machine": "^Phobos\\-Tobias$",
+       // "title": "^Signal$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "none",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 764,
+       "width": 1286,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "WhatsApp for Linux",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+        "class": "^Whatsapp\\-for\\-linux$",
+       // "instance": "^whatsapp\\-for\\-linux$",
+       // "machine": "^Phobos\\-Tobias$",
+       // "title": "^WhatsApp\\ for\\ Linux$"
+       }
+    ],
+    "type": "con"
+}
+
