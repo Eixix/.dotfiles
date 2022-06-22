@@ -8,3 +8,5 @@ ln -s $HOME/.dotfiles/.zshrc .zshrc
 ln -s $HOME/.dotfiles/.Xresources .Xresources
 rm $HOME/.i3/config
 ln -s $HOME/.dotfiles/config .i3/config
+
+git config --global user.signingkey "0x4b7228cfe59b7380"
