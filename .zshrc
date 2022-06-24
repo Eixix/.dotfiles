@@ -11,8 +11,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 
 export EDITOR="nvim"
-export KEYID_OLD="0x4b7228cfe59b7380"
-export KEYID="0xba49e0ee5ac5e5688e2349554b7228cfe59b7380"
+export KEYID="0x4b7228cfe59b7380"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
