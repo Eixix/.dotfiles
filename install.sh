@@ -7,9 +7,11 @@ read $USER
 echo "Enter your user password"
 read $PW
 
+sed -i 's/#EnableAur/EnableAur/' /etc/pamac.conf
+
 yes | sudo -u $USER install_pulse
 yes | pacman -Syu
-yes | pacman -S git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim
+yes | pamac -S git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo -u $USER rm $HOME/.zshrc $HOME/.Xresources
