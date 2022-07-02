@@ -19,7 +19,7 @@ sudo -u $USER rm $HOME/.i3/config
 sudo -u $USER ln -s $HOME/.dotfiles/config $HOME/.i3/config
 
 # GPG keys
-$KEYID="0x4b7228cfe59b7380"
+KEYID="0x4b7228cfe59b7380"
 sudo -u $USER gpg --recv $KEYID
 sudo -u $USER echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$KEYID" trust
 
@@ -28,7 +28,7 @@ sudo -u $USER git config --global user.signingkey "$KEYID"
 sudo -u $USER git config --global commit.gpgsign true
 
 # Add Yubikey PAM auth to all configs
-$PAM_LINE="auth sufficient pam_u2f.so"
+PAM_LINE="auth sufficient pam_u2f.so"
 echo $PAM_LINE >> /etc/pam.d/sudo
 echo $PAM_LINE >> /etc/pam.d/polkit-1
 echo $PAM_LINE >> /etc/pam.d/lightdm
