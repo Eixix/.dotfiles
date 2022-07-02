@@ -1,16 +1,17 @@
 #!/bin/bash
-install_pulse
+yes | install_pulse
 yes | pacman -Syu
 yes | pacman -S git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim
 yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-rm $HOME/.zshrc $HOME/.Xresources
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/.dotfiles/.Xresources $HOME/.Xresources
-rm $HOME/.i3/config
-ln -s $HOME/.dotfiles/config $HOME/.i3/config
+$HOME_DIR="/home/tobias"
+rm $HOME_DIR/.zshrc $HOME_DIR/.Xresources
+ln -s $HOME_DIR/.dotfiles/.zshrc $HOME_DIR/.zshrc
+ln -s $HOME_DIR/.dotfiles/.Xresources $HOME_DIR/.Xresources
+rm $HOME_DIR/.i3/config
+ln -s $HOME_DIR/.dotfiles/config $HOME_DIR/.i3/config
 
-source $HOME/.zshrc
+source $HOME_DIR/.zshrc
 
 # GPG keys
 gpg --recv $KEYID
