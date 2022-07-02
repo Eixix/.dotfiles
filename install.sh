@@ -7,7 +7,7 @@ read $USER
 echo "Enter your user password"
 read $PW
 
-sed -i 's/#EnableAur/EnableAur/' /etc/pamac.conf
+sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 
 yes | sudo -u $USER install_pulse
 yes | pacman -Syu
