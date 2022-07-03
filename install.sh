@@ -24,8 +24,8 @@ sudo -u $USER git config --global user.signingkey "$KEYID"
 sudo -u $USER git config --global commit.gpgsign true
 
 # Clone from repository
-git clone https://github.com/Eixix/.dotfiles
-git remote set-url origin git@github.com:Eixix/.dotfiles.git
+sudo -u $USER git clone https://github.com/Eixix/.dotfiles
+sudo -u $USER git -c .dotfiles remote set-url origin git@github.com:Eixix/.dotfiles.git
 sudo -u $USER rm $HOME/.zshrc $HOME/.Xresources
 sudo -u $USER ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 sudo -u $USER ln -s $HOME/.dotfiles/.Xresources $HOME/.Xresources
