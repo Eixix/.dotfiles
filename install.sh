@@ -22,20 +22,12 @@ echo "========================================="
 echo "Install Default packages and updates"
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
-pacman -S git numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim --noconfirm
+pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim --noconfirm
 pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
 
 echo "========================================="
 echo "Install zsh"
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "========================================="
-echo "Install npm and node"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sudo -u $USER bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-sudo -u $USER nvm install --lts
 
 echo "========================================="
 echo "Install lunarvim"
