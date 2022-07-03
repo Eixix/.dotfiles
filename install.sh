@@ -31,7 +31,7 @@ yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/m
 
 echo "========================================="
 echo "Install lunarvim"
-sudo -u $USER sh -c "$(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)" -y
+yes | sudo -u $USER sh -c "$(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)" -y
 
 echo "========================================="
 echo "GPG keys integration"
