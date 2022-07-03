@@ -4,14 +4,12 @@
 
 echo "Enter your user username"
 read $USER
-echo "Enter your user password"
-read $PW
 
 sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 
 yes | sudo -u $USER install_pulse
-yes | pacman -Syu
-yes | pamac install git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim
+pacman -Syu --noconfirm
+pamac install git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim --no-confirm
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GPG keys
@@ -37,3 +35,13 @@ echo $PAM_LINE >> /etc/pam.d/sudo
 echo $PAM_LINE >> /etc/pam.d/polkit-1
 echo $PAM_LINE >> /etc/pam.d/lightdm
 echo $PAM_LINE >> /etc/pam.d/i3lock
+
+while true; do
+    read -p "Do you wish to install Discord? " yn
+    case $yn in
+        [Yy]* ) pamac install discord --no-confirm; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
+
