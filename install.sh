@@ -45,3 +45,20 @@ while true; do
     esac
   done
 
+while true; do
+    read -p "Do you wish to install Steam? " yn
+    case $yn in
+        [Yy]* ) pamac install steam-manjaro --no-confirm; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
+
+while true; do
+    read -p "Do you wish to install Corsair drivers? " yn
+    case $yn in
+        [Yy]* ) pamac install ckb-next --no-confirm; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
