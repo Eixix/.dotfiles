@@ -3,9 +3,7 @@
 # Execute with "sudo bash install.sh"
 
 echo "Enter your user username"
-read $USER
-
-HOME="/home/$USER"
+read USER
 
 sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 
