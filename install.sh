@@ -1,9 +1,18 @@
 #!/bin/bash
 
 # Execute with "sudo bash install.sh"
+while true; do
+  echo "Enter your user username"
+  read USER
 
-echo "Enter your user username"
-read USER
+  HOME="/home/$USER"
+
+  if [ -d "$HOME" ]; then
+    break;;
+  else
+    echo "User does not exist, enter a real user"
+  fi
+done
 
 sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 
