@@ -17,7 +17,7 @@ yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/m
 # GPG keys
 KEYID="0x4b7228cfe59b7380"
 sudo -u $USER gpg --recv $KEYID
-sudo -u $USER echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$KEYID" trust
+echo -e "5\ny\n" | sudo -u $USER gpg --command-fd 0 --edit-key "$KEYID" trust
 
 # Configure for git
 sudo -u $USER git config --global user.signingkey "$KEYID"
