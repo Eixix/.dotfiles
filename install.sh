@@ -10,7 +10,7 @@ sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
 pacman -S git numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim --noconfirm
-pamac install whatsapp-for-linux visual-studio-code-bin google-chrome
+pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GPG keys
