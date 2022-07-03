@@ -8,7 +8,7 @@ while true; do
   HOME="/home/$USER"
 
   if [ -d "$HOME" ]; then
-    break;;
+    break
   else
     echo "User does not exist, enter a real user"
   fi
