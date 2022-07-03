@@ -11,6 +11,7 @@ yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
 pacman -S git numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim --noconfirm
 pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
+
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GPG keys
@@ -24,6 +25,7 @@ sudo -u $USER git config --global commit.gpgsign true
 
 # Clone from repository
 git clone git@github.com:Eixix/.dotfiles.git
+git remote set-url origin git@github.com:Eixix/.dotfiles.git
 sudo -u $USER rm $HOME/.zshrc $HOME/.Xresources
 sudo -u $USER ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 sudo -u $USER ln -s $HOME/.dotfiles/.Xresources $HOME/.Xresources
@@ -41,7 +43,7 @@ while true; do
     read -p "Do you wish to install Discord? " yn
     case $yn in
         [Yy]* ) pamac install discord --no-confirm; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
   done
@@ -50,7 +52,7 @@ while true; do
     read -p "Do you wish to install Steam? " yn
     case $yn in
         [Yy]* ) pamac install steam-manjaro --no-confirm; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
   done
@@ -59,7 +61,7 @@ while true; do
     read -p "Do you wish to install Corsair drivers? " yn
     case $yn in
         [Yy]* ) pamac install ckb-next --no-confirm; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
   done
