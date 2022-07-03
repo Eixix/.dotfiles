@@ -9,7 +9,7 @@ sed -i 's/#EnableAUR/EnableAUR/' /etc/pamac.conf
 
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
-pamac install git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin spotify thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim --no-confirm
+pamac install git neovim numlockx yubikey-manager-qt yubikey-personalization-gui yubioath-desktop whatsapp-for-linux visual-studio-code-bin thunderbird telegram-desktop signal-desktop google-chrome dolphin direnv exa neovim --no-confirm
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GPG keys
