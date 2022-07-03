@@ -39,29 +39,29 @@ echo $PAM_LINE >> /etc/pam.d/polkit-1
 echo $PAM_LINE >> /etc/pam.d/lightdm
 echo $PAM_LINE >> /etc/pam.d/i3lock
 
-while true; do
-    read -p "Do you wish to install Discord? " yn
-    case $yn in
-        [Yy]* ) pamac install discord --no-confirm; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-  done
-
-while true; do
-    read -p "Do you wish to install Steam? " yn
-    case $yn in
-        [Yy]* ) pamac install steam-manjaro --no-confirm; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-  done
-
-while true; do
-    read -p "Do you wish to install Corsair drivers? " yn
-    case $yn in
-        [Yy]* ) pamac install ckb-next --no-confirm; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-  done
+# while true; do
+#     read -p "Do you wish to install Discord? " yn
+#     case $yn in
+#         [Yy]* ) pamac install discord --no-confirm; break;;
+#         [Nn]* ) break;;
+#         * ) echo "Please answer yes or no.";;
+#     esac
+#   done
+# 
+# while true; do
+#     read -p "Do you wish to install Steam? " yn
+#     case $yn in
+#         [Yy]* ) pamac install steam-manjaro --no-confirm; break;;
+#         [Nn]* ) break;;
+#         * ) echo "Please answer yes or no.";;
+#     esac
+#   done
+# 
+# while true; do
+#     read -p "Do you wish to install Corsair drivers? " yn
+#     case $yn in
+#         [Yy]* ) pamac install ckb-next --no-confirm; break;;
+#         [Nn]* ) break;;
+#         * ) echo "Please answer yes or no.";;
+#     esac
+#   done
