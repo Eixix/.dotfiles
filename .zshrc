@@ -10,7 +10,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
-export EDITOR="nvim"
+export EDITOR="lvim"
 export KEYID="0x4b7228cfe59b7380"
 export PATH="$PATH:/home/tobias/.yarn/bin"
 
@@ -20,7 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias ll="exa -la --icons"
 alias ls="exa --icons"
-alias vim="nvim"
+alias vim="lvim"
 alias r="ranger"
 alias zshrc="vim ~/.dotfiles/.zshrc"
 alias viminit="vim ~/.dotfiles/init.vim"
