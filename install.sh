@@ -38,6 +38,7 @@ echo "GPG keys integration"
 KEYID="0x4b7228cfe59b7380"
 sudo -u $USER gpg --recv $KEYID
 echo -e "5y" | sudo -u $USER gpg --command-fd 0 --edit-key "$KEYID" trust
+wget -O -P $HOME/.gnupg/gpg-agent.conf https://raw.githubusercontent.com/drduh/config/master/gpg-agent.conf
 
 # Configure for git
 sudo -u $USER git config --global user.signingkey "$KEYID"
@@ -55,7 +56,7 @@ sudo -u $USER ln -s $HOME/.dotfiles/config $HOME/.i3/config
 
 echo "========================================="
 echo "Add Yubikey PAM auth to all configs"
-pamu2fcfg -o pam://hostname -i pam://hostname > ~/.config/Yubico/u2f_keys
+pamu2fcfg > ~/.config/Yubico/u2f_keys
 PAM_LINE="auth sufficient pam_u2f.so"
 echo $PAM_LINE >> /etc/pam.d/sudo
 echo $PAM_LINE >> /etc/pam.d/polkit-1
