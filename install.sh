@@ -55,6 +55,7 @@ sudo -u $USER ln -s $HOME/.dotfiles/config $HOME/.i3/config
 
 echo "========================================="
 echo "Add Yubikey PAM auth to all configs"
+pamu2fcfg -o pam://hostname -i pam://hostname > ~/.config/Yubico/u2f_keys
 PAM_LINE="auth sufficient pam_u2f.so"
 echo $PAM_LINE >> /etc/pam.d/sudo
 echo $PAM_LINE >> /etc/pam.d/polkit-1
