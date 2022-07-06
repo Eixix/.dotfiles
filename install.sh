@@ -22,16 +22,19 @@ echo "========================================="
 echo "Install Default packages and updates"
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
-pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim --noconfirm
+pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim unzip yarn ttf-fira-code playerctl --noconfirm 
 pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
 
 echo "========================================="
 echo "Install zsh"
 yes | sudo -u $USER sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo -u $USER git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+LINE_NUMBER=$(grep -n $USER /etc/passwd | cut -f1 -d:)
+sed -i "${LINE_NUMBER}s=/bin/bash=/usr/bin/zsh=" /etc/passwd
 
 echo "========================================="
 echo "Install lunarvim"
-yes | sudo -u $USER sh -c "$(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)" -y
+yes | sudo -u $USER bash -c "$(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)"
 
 echo "========================================="
 echo "GPG keys integration"
@@ -56,12 +59,13 @@ sudo -u $USER ln -s $HOME/.dotfiles/config $HOME/.i3/config
 
 echo "========================================="
 echo "Add Yubikey PAM auth to all configs"
-pamu2fcfg > ~/.config/Yubico/u2f_keys
+sudo -u $USER pamu2fcfg > ~/.config/Yubico/u2f_keys
+sudo -u $USER mkdir ~/.config/Yubico
 PAM_LINE="auth sufficient pam_u2f.so"
-echo $PAM_LINE >> /etc/pam.d/sudo
-echo $PAM_LINE >> /etc/pam.d/polkit-1
-echo $PAM_LINE >> /etc/pam.d/lightdm
-echo $PAM_LINE >> /etc/pam.d/i3lock
+sed -i "1 a$PAM_LINE" /etc/pam.d/sudo
+sed -i "1 a$PAM_LINE" /etc/pam.d/polkit-1
+sed -i "1 a$PAM_LINE" /etc/pam.d/lightdm
+sed -i "1 a$PAM_LINE" /etc/pam.d/i3lock
 
 echo "========================================="
 echo "Install optional software"
@@ -91,3 +95,23 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
   done
+
+while true; do
+   read -p "Do you want to install custom boot screen? " yn
+   case $yn in
+        [Yy]* ) pacman -S --noconfirm bootsplash-systemd bootsplash-manager bootsplash-theme-illyria; sudo bootsplash-manager --set "illyria"; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+   esac
+done
+
+echo "========================================="
+echo "Rebooting"
+while true; do
+  read -p "Do you want to reboot now? " yn
+  case $yn in
+    [Yy]* ) shutdown -r now; break;;
+    [Nn]* ) break;;
+    * ) echo "Please answer yes or no.";;
+  esac
+done
