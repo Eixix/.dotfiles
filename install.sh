@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO: Fonts, NVM, LVIM
-
 # Execute with "sudo bash install.sh"
 while true; do
   echo "Enter your user username"
@@ -35,6 +33,14 @@ sed -i "${LINE_NUMBER}s=/bin/bash=/usr/bin/zsh=" /etc/passwd
 echo "========================================="
 echo "Install lunarvim"
 yes | sudo -u $USER bash -c "$(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)"
+
+echo "========================================="
+echo "Install fonts"
+sudo -u $USER mkdir -P $HOME/.local/share/fonts
+sudo -u $USER wget -O "$HOME/.local/share/fonts/MesloLGS NF Regular.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf 
+sudo -u $USER wget -O "$HOME/.local/share/fonts/MesloLGS NF Bold.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf 
+sudo -u $USER wget -O "$HOME/.local/share/fonts/MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf 
+sudo -u $USER wget -O "$HOME/.local/share/fonts/MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf 
 
 echo "========================================="
 echo "GPG keys integration"
