@@ -37,10 +37,6 @@ eval "$(direnv hook bash)"
 
 # Functions
 encrypt() {
-    echo $2 | gpg --encrypt --armor --recipient $1
-}
-
-encrypt_and_sign() {
     echo $2 | gpg --armor --clearsign | gpg --encrypt --armor --recipient $1
 }
 
