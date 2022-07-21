@@ -23,9 +23,9 @@ alias ll="exa -la --icons"
 alias ls="exa --icons"
 alias vim="lvim"
 alias r="ranger"
-alias zshrc="vim ~/.dotfiles/.zshrc"
-alias viminit="vim ~/.dotfiles/init.vim"
-alias i3config="vim ~/.dotfiles/manjaro/config"
+alias cat="bat"
+alias zshrc="vim ~/.zshrc"
+alias i3config="vim ~/.i3/config"
 
 [ -f "/home/tobias/.ghcup/env" ] && source "/home/tobias/.ghcup/env" # ghcup-env
 
