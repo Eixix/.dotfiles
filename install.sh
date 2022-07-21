@@ -20,7 +20,7 @@ echo "========================================="
 echo "Install Default packages and updates"
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
-pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim unzip yarn ttf-fira-code playerctl --noconfirm 
+pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim unzip yarn ttf-fira-code playerctl py3status --noconfirm 
 pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
 
 echo "========================================="
