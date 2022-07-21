@@ -32,7 +32,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun#ssh -theme DarkBlue -show combi -icon-theme "Papirus" -show-icons
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -334,7 +334,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command py3status -c /home/tobias/.dotfiles/phobos/i3status.conf
+	status_command py3status
 	position bottom
 
 	font xft:URWGothic-Book 15 
