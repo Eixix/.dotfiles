@@ -20,7 +20,7 @@ echo "========================================="
 echo "Install Default packages and updates"
 yes | sudo -u $USER install_pulse
 pacman -Syu --noconfirm
-pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim unzip yarn ttf-fira-code playerctl py3status --noconfirm 
+pacman -S git npm numlockx rust yubikey-manager-qt yubikey-personalization-gui yubioath-desktop thunderbird telegram-desktop signal-desktop dolphin direnv exa neovim unzip yarn ttf-fira-code playerctl yubikey-touch-detector --noconfirm 
 pamac install whatsapp-for-linux visual-studio-code-bin google-chrome --no-confirm
 
 echo "========================================="
@@ -72,6 +72,8 @@ sed -i "1 a$PAM_LINE" /etc/pam.d/sudo
 sed -i "1 a$PAM_LINE" /etc/pam.d/polkit-1
 sed -i "1 a$PAM_LINE" /etc/pam.d/lightdm
 sed -i "1 a$PAM_LINE" /etc/pam.d/i3lock
+sudo -u $USER systemctl --user daemon-reload
+sudo -u $USER systemctl --user enable --now yubikey-touch-detector.socket
 
 echo "========================================="
 echo "Install optional software"

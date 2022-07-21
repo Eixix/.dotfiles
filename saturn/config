@@ -287,7 +287,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id numlockx on
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/tobias/.dotfiles/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/tobias/.dotfiles/saturn/workspace-1.json'"
 
 # Own applications
 exec /usr/bin/discord
