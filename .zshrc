@@ -56,3 +56,8 @@ decrypt_file () {
         output=$(echo "${1}" | rev | cut -c16- | rev)
         gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}"
 }
+
+decrypt_file2 () {
+        output=$(echo "${1}" | rev)
+        gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}"
+}
