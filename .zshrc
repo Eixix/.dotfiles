@@ -10,6 +10,11 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
+
 export EDITOR="lvim"
 export KEYID="0x4b7228cfe59b7380"
 export MICHI="0x3B6861376B6D3D78"

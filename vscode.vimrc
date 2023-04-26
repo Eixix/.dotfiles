@@ -1,0 +1,1 @@
+let @r=':%s/home\/(?<!,)$\/dimacs\//g^M'
